@@ -1,0 +1,153 @@
+:root {
+  --bg: linear-gradient(135deg, #0a0a0a, #1a1a2e);
+  --text-color: #ffffff;
+  --accent: #00aaff;
+  --card-bg: #111;
+  --border: #444;
+}
+
+.works-root {
+  font-family: "Segoe UI", sans-serif;
+  background: var(--bg);
+  color: var(--text-color);
+  min-height: 100vh;
+}
+
+.works-head {
+  margin-top: 6rem;
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.works-projects-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 95vw;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.works-slide-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.works-project-video {
+  width: 100%;
+  max-height: 220px;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.works-slide-card-content {
+  width: 100%;
+}
+
+.works-card-title {
+  color: var(--accent);
+  margin: 0.5rem 0;
+  font-size: 1.3rem;
+}
+
+.works-card-desc {
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.works-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.works-card-tech-item {
+  background: rgba(0, 119, 204, 0.1);
+  color: var(--accent);
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-weight: 500;
+  border: 1px solid var(--accent);
+  font-size: 0.95rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.works-card-tech-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: 0.5s;
+  z-index: 1;
+}
+
+.works-card-tech-item:hover {
+  color: #fff;
+  background-color: var(--accent);
+  box-shadow: 0 0 15px var(--accent);
+  transform: scale(1.05);
+  border-color: #fff;
+}
+
+.works-card-tech-item:hover::before {
+  left: 130%;
+}
+
+/* Desktop styles */
+@media (min-width: 768px) {
+  .works-projects-wrapper {
+    max-width: 900px;
+    padding: 0;
+    gap: 3rem;
+  }
+  .works-slide-card {
+    flex-direction: row;
+    gap: 2rem;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+  .works-project-video {
+    width: 50%;
+    height: 250px;
+    max-height: 400px;
+    margin-bottom: 0;
+  }
+  .works-slide-card-content {
+    flex: 1;
+    width: auto;
+  }
+  .works-card-desc {
+    text-align: left;
+  }
+  .works-card-tech {
+    justify-content: flex-start;
+  }
+}
